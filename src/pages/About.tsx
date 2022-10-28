@@ -1,0 +1,1 @@
+export const About = () => <h1 className="container">About</h1>;

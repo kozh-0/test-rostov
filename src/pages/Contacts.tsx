@@ -1,0 +1,1 @@
+export const Contacts = () => <h1 className="container">Contacts</h1>;

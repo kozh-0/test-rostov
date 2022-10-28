@@ -4,11 +4,13 @@ export default function Main() {
     return (
         <div className="top container">
             <div className="top_title">
-                <div>
+                <div className="top_title_text">
                     <h1>ПУТЕШЕСТВИЕ</h1>
                     <h3>на красную планету</h3>
                 </div>
-                <button>Начать путешествие</button>
+                <div>
+                    <button>Начать путешествие</button>
+                </div>
             </div>
 
 
@@ -26,7 +28,7 @@ export default function Main() {
                 </div>
                 <div className="top_stats_item">
                     календарик за
-                    <span>2001<span style={{fontSize: '30px'}}>г.</span></span>
+                    <span>2001<span style={{ fontSize: '30px' }}>г.</span></span>
                     в подарок
                 </div>
                 <div className="top_stats_item">

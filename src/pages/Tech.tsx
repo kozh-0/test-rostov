@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-export default function AstroFacts() {
+// interface NasaObject {
+//     copyright: string;
+//     date: string;
+//     explanation: string;
+//     hdurl: string;
+//     media_type: string;
+//     service_version: string;
+//     title: string;
+//     url: string;
+// };
+
+export default function Tech() {
     const [data, setData] = useState<any>({});
 
     useEffect(() => {
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-            .then(response => response.json())
-            .then(data => setData(data));
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(err => console.error(err));
     }, [])
 
     const { explanation, date, url, title, media_type } = data;
@@ -25,6 +36,7 @@ export default function AstroFacts() {
                         <h1>{title}</h1>
                         <h5>{date}</h5>
                         <p>{explanation}</p>
+                    <p style={{textAlign: 'right'}}>*Обновляется ежедневно <br />Nasa api</p>
                     </div>
                 </div>
             </> : <h1>Loading...</h1>}

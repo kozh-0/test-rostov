@@ -1,6 +1,5 @@
 import {GitHubSVG} from '../img/Github';
 
-
 export const Footer = () => <footer>
 	<div className="footer_inner">
 		<div>
@@ -9,7 +8,6 @@ export const Footer = () => <footer>
 				<GitHubSVG/>
 			</a>
 		</div>
-		{/* <p>OwlTop © 2020 - 2021</p> */}
 		<p>Кожевников Дмитрий ©</p>
 	</div>
 </footer>;

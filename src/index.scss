@@ -1,4 +1,5 @@
 * { box-sizing: border-box;}
+a {text-decoration: none; color: #f4f4f4}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,9 +13,8 @@ body {
 
 
 .App {
-  background: rgb(29, 29, 41) url('./img/space_star_wallpaper_026.jpg') center center/cover no-repeat;
+  background: rgb(29, 29, 41) url('./img/space_star_wallpaper_0261.jpg') center center/cover no-repeat;
   height: 100vh;
-
 }
 
 .container {
@@ -33,7 +33,8 @@ body {
 
 header {
   background: rgba( #000000, .2);
-  border: 1px solid rgb(86, 86, 86);
+  border-bottom: 1px solid rgb(86, 86, 86);
+  border-top: 1px solid rgb(86, 86, 86);
 
   .header {
     height: 100px;
@@ -42,7 +43,7 @@ header {
     justify-content: space-between;
 
     &_logo {
-      height: 100px;
+      height: 102px;
       width: 320px;
       border: 1px solid rgb(50, 50, 50);;
       position: relative;
@@ -66,7 +67,7 @@ header {
     }
 
     &_links {
-      span {
+      a {
         padding: 10px;
         margin: 0 10px;
         cursor: pointer;
@@ -84,12 +85,12 @@ header {
 .top {
   height: calc(100vh - 102px);
   display: flex;
-  margin-top: 7%;
+  padding-top: 7%;
   justify-content: space-between;
 
 
   &_title {
-    div {
+    &_text {
       background: linear-gradient(90deg, rgba(244,244,244,1) 15%, rgba(255,64,5,1) 100%);
       background-clip: text;
       -webkit-background-clip: text;
@@ -111,7 +112,7 @@ header {
       padding: 10px 25px;
       cursor: pointer;
       transition: all .2s ease;
-      &:hover { background-color: rgb(183, 52, 12) }
+      &:hover { background-color: #dc671b; }
 
       background:
       linear-gradient(to right, #f4f4f4 1px, transparent 1px) 0 100%,
@@ -120,6 +121,10 @@ header {
       linear-gradient(to top, #f4f4f4 1px, transparent 1px) 0 100%;
       background-repeat: no-repeat;
       background-size: 6px 6px;
+
+      // &::before &::after{
+      //   // background: 
+      // }
     }
   }
 
@@ -129,22 +134,53 @@ header {
     display: flex;
     flex-wrap: wrap;
     width: 390px;
-    height: 360px;
+    height: 340px;
     &_item {
+      cursor: pointer;
       height: 160px;
       width: 175px;
-      margin: 10px;
+      margin: 5px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      border: 1px solid red;
-
       span {
         display: flex;
         align-items: flex-end;
         font-size: 70px;
         line-height: .85;
+      }
+      $border: 1px solid #aeaeae;
+      $gradient: rgba(187, 187, 187, 0) 40%, rgba(65, 65, 65, 0.5) 100%;
+      $gradient_hover: rgba(255, 255, 255, 0) 40%, rgba(147, 147, 147, 0.5) 100%;
+      &:nth-child(1) {
+        background: linear-gradient(145deg, $gradient);
+        &:hover {
+          background: linear-gradient(145deg, $gradient_hover);
+          border-bottom: $border; border-right: $border; 
+        }
+      }
+      &:nth-child(2){
+        background: linear-gradient(220deg, $gradient);
+        &:hover {
+          background: linear-gradient(220deg, $gradient-hover);
+          border-bottom: $border; border-left: $border; 
+        }
+      
+      }
+      &:nth-child(3) {
+        background: linear-gradient(45deg, $gradient);
+        &:hover {
+          background: linear-gradient(45deg, $gradient-hover);
+          border-top: $border; border-right: $border;
+        }
+      }
+      &:nth-child(4) {
+        background: linear-gradient(320deg, $gradient);
+        &:hover {
+          background: linear-gradient(320deg, $gradient-hover);
+          border-top: $border; border-left: $border;
+        }
       }
     }
   }
@@ -155,32 +191,35 @@ header {
 
 
 
+.nasa-page {
 
-.pic {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-
-  img {
-    display: block;
-    margin: 0px auto;
-    max-width: 630px;
-    @media (max-width: 883px) {
-        width: 100%;
-    }
-  }
+  .pic {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
   
-  .descr {
-      padding: 50px;
-      font-size: 23px;
-      p {font-weight: 600; color: #333}
-      h1, h5 {
-          color:#e81212;
-      }
-  }
-  @media (max-width: 1150px){
-    display: block;
-    .descr { padding: 0 }
+    img {
+      display: block;
+      margin: 0px auto;
+      max-width: 600px;
+      height: 600px;
+      // @media (max-width: 883px) {
+      //     width: 100%;
+      // }
+    }
+    
+    .descr {
+        padding: 50px;
+        font-size: 20px;
+        p {font-weight: 600}
+        h1, h5 {
+            color:#e81212;
+        }
+    }
+    // @media (max-width: 1150px){
+    //   display: block;
+    //   .descr { padding: 0 }
+    // }
   }
 }
 
@@ -218,5 +257,26 @@ footer {
     align-items: center;
     flex-direction: column;
     p {margin: 5px 10px; font-size: 16px;}
+  }
+}
+
+
+@media (max-width: 993px){
+  .header_links { display: none }
+}
+@media (max-width: 876px){
+  .top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: unset;
+    padding-top: 15px;
+    &_title div{
+      h1 {margin-top: 20px;}
+      h3 {margin-bottom: 20px; text-align: center;}
+      button {text-align: center;}
+    }
+    &_stats {
+      padding-top: 20px;
+    }
   }
 }

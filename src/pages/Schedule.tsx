@@ -1,0 +1,1 @@
+export const Schedule = () => <h1 className="container">Schedule</h1>;

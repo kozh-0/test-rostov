@@ -1,0 +1,1 @@
+export const Guarantees = () => <h1 className="container">Guarantees</h1>;
