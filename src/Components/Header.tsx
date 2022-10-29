@@ -16,7 +16,7 @@ export default function Header() {
     return (
         <header>
             <div className='header container'>
-                <Link to='/'>
+                <Link to='/test-rostov'>
                     <div className='header_logo'>
                         <img src={spaceX} alt="spaceX" />
                     </div>
