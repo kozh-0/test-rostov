@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/test-rostov/static/css/main.52f3aaee.css",
-    "main.js": "/test-rostov/static/js/main.93bb387d.js",
+    "main.js": "/test-rostov/static/js/main.f3f81724.js",
     "static/media/space_star_wallpaper_0261.jpg": "/test-rostov/static/media/space_star_wallpaper_0261.4a28e707617f4269857b.jpg",
     "index.html": "/test-rostov/index.html",
     "main.52f3aaee.css.map": "/test-rostov/static/css/main.52f3aaee.css.map",
-    "main.93bb387d.js.map": "/test-rostov/static/js/main.93bb387d.js.map"
+    "main.f3f81724.js.map": "/test-rostov/static/js/main.f3f81724.js.map"
   },
   "entrypoints": [
     "static/css/main.52f3aaee.css",
-    "static/js/main.93bb387d.js"
+    "static/js/main.f3f81724.js"
   ]
 }
