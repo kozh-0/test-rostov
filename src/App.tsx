@@ -17,12 +17,12 @@ export default function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/tech" element={<Tech />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/guarantees" element={<Guarantees />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/test-rostov" element={<Main />} />
+          <Route path="/test-rostov/tech" element={<Tech />} />
+          <Route path="/test-rostov/schedule" element={<Schedule />} />
+          <Route path="/test-rostov/guarantees" element={<Guarantees />} />
+          <Route path="/test-rostov/about" element={<About />} />
+          <Route path="/test-rostov/contacts" element={<Contacts />} />
         </Routes>
       </div>
       <Footer />
