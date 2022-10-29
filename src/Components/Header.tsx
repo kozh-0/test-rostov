@@ -1,18 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import spaceX from '../img/spaceX.png';
 
 const links = [
-    { title: 'Технологии', route: '/tech' },
-    { title: 'График полетов', route: '/schedule' },
-    { title: 'Гарантии', route: '/guarantees' },
-    { title: 'О компании', route: '/about' },
-    { title: 'Контакты', route: '/contacts' }
+    { title: 'Технологии', route: '/test-rostov/tech' },
+    { title: 'График полетов', route: '/test-rostov/schedule' },
+    { title: 'Гарантии', route: '/test-rostov/guarantees' },
+    { title: 'О компании', route: '/test-rostov/about' },
+    { title: 'Контакты', route: '/test-rostov/contacts' }
 ];
 
 
 export default function Header() {
     const [isOpened, setIsOpened] = useState(true);
+
+    useEffect(() => {
+        console.log(window.screen.width);
+    });
     return (
         <header>
             <div className='header container'>
@@ -27,7 +31,7 @@ export default function Header() {
                             key={el.title}
                             className='header_links_item'
                             to={el.route}
-                            onClick={() => setIsOpened(false)}
+                            // onClick={() => setIsOpened(false)}
                         >{el.title}</Link>
                     ))}
                     <button className='close' onClick={() => setIsOpened(false)}>X</button>

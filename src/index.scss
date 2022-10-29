@@ -86,7 +86,7 @@ header {
 
 
 .top {
-  height: calc(100vh - 102px);
+  // height: calc(100vh - 102px);
   display: flex;
   padding-top: 7%;
   justify-content: space-between;
@@ -136,8 +136,8 @@ header {
   &_stats {
     display: flex;
     flex-wrap: wrap;
-    width: 390px;
-    height: 340px;
+    max-width: 390px;
+    // height: auto;
     &_item {
       cursor: pointer;
       height: 160px;
@@ -258,7 +258,7 @@ footer {
 
 @media (max-width: 1150px){
   .nasa-page .pic img{
-    width: 400px;
+    width: 100%;
     height: 400px;
   }
 }
@@ -313,8 +313,11 @@ footer {
 }
 
 @media (max-width: 993px){
-  .nasa-page .pic {
-    flex-direction: column-reverse;
+  .nasa-page {
+    .pic {
+      flex-direction: column-reverse;
+      .descr {padding-right: 0;}
+    }
   }
 }
 @media (max-width: 876px){
@@ -334,7 +337,7 @@ footer {
   }
 }
 @media (max-width: 520px){
-  .top_title_text h1 {font-size: 50px !important;}
+  .top_title_text h1 {font-size: 50px;}
   header {
     height: 80px;
     .header{
@@ -351,4 +354,19 @@ footer {
 }
 @media (max-width: 450px){
   .top {transform: scale(0.9);}
+}
+@media (max-width: 400px){
+  header .header_logo  {
+    width: 280px;
+    img {width: 280px;}
+  }
+  .top {
+    &_title h1 {font-size: 40px;}
+    &_stats {
+      width: 340px;
+      &_item {
+        width: 160px;
+      }
+    }
+  }
 }
