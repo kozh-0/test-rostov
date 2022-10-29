@@ -8,7 +8,7 @@ export default function Main() {
                     <h1>ПУТЕШЕСТВИЕ</h1>
                     <h3>на красную планету</h3>
                 </div>
-                <div>
+                <div className="top_title_btn">
                     <button>Начать путешествие</button>
                 </div>
             </div>

@@ -36,7 +36,7 @@ export default function Tech() {
                         <h1>{title}</h1>
                         <h5>{date}</h5>
                         <p>{explanation}</p>
-                    <p style={{textAlign: 'right'}}>*Обновляется ежедневно <br />Nasa api</p>
+                    <p style={{textAlign: 'center'}}>*Обновляется ежедневно <br />Nasa api</p>
                     </div>
                 </div>
             </> : <h1>Loading...</h1>}

@@ -14,7 +14,7 @@ body {
 
 .App {
   background: rgb(29, 29, 41) url('./img/space_star_wallpaper_0261.jpg') center center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
@@ -75,10 +75,13 @@ header {
         &:hover{
           color: #b1b1b1;
           border-bottom: 1px solid #b1b1b1;
-        }      
+        }
+        button.close {display: none !important;}
       }
     }
   }
+  .burger { display: none;}
+  .close { display: none;}
 }
 
 
@@ -106,25 +109,25 @@ header {
         margin: 0 0 85px 0;
       }
     }
-    button {
-      font-size: 15px;
-      color: #f4f4f4;
-      padding: 10px 25px;
-      cursor: pointer;
-      transition: all .2s ease;
-      &:hover { background-color: #dc671b; }
-
-      background:
-      linear-gradient(to right, #f4f4f4 1px, transparent 1px) 0 100%,
-      linear-gradient(to left, #f4f4f4 1px, transparent 1px) 100% 0,
-      linear-gradient(to bottom, #f4f4f4 1px, transparent 1px) 100% 0,
-      linear-gradient(to top, #f4f4f4 1px, transparent 1px) 0 100%;
-      background-repeat: no-repeat;
-      background-size: 6px 6px;
-
-      // &::before &::after{
-      //   // background: 
-      // }
+    &_btn {
+      text-align: center;
+      button {
+        border: 2px solid orange;
+        font-size: 15px;
+        color: #f4f4f4;
+        padding: 10px 25px;
+        cursor: pointer;
+        transition: all .2s ease;
+        &:hover { background-color: #dc671b; }
+  
+        background:
+        linear-gradient(to right, #f4f4f4 2px, transparent 2px) 0 100%,
+        linear-gradient(to left, #f4f4f4 2px, transparent 2px) 100% 0,
+        linear-gradient(to bottom, #f4f4f4 2px, transparent 2px) 100% 0,
+        linear-gradient(to top, #f4f4f4 2px, transparent 2px) 0 100%;
+        background-repeat: no-repeat;
+        background-size: 6px 6px;
+      }
     }
   }
 
@@ -199,27 +202,20 @@ header {
     flex-direction: row-reverse;
   
     img {
+      max-width: 550px;
+      height: 550px;
       display: block;
       margin: 0px auto;
-      max-width: 600px;
-      height: 600px;
-      // @media (max-width: 883px) {
-      //     width: 100%;
-      // }
     }
     
     .descr {
-        padding: 50px;
+        padding-right: 20px;
         font-size: 20px;
-        p {font-weight: 600}
+        p {font-weight: 600; background: rgba(33, 33, 33, 0.5); padding: 10px; border-radius: 5px;}
         h1, h5 {
             color:#e81212;
         }
     }
-    // @media (max-width: 1150px){
-    //   display: block;
-    //   .descr { padding: 0 }
-    // }
   }
 }
 
@@ -260,9 +256,66 @@ footer {
   }
 }
 
+@media (max-width: 1150px){
+  .nasa-page .pic img{
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (max-width: 1012px){
+  header  {
+    .header_links { 
+      padding-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:rgba(44, 44, 44, 0.95);
+      &_item {
+        margin-top: 10px !important;
+      }
+      button {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 25px;
+        right: 10px;
+      }
+    }
+    .burger {
+      border: 1px solid orange;
+      border-radius:5px;
+      background: rgba(72, 72, 72, .6);
+      color: #f4f4f4;
+      font-size: 40px;
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+    .close {
+      display: block;
+      border: 1px solid orange;
+      border-radius:5px;
+      background: rgb(72, 72, 72);
+      color: #f4f4f4;
+      font-size: 40px;
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+}
 
 @media (max-width: 993px){
-  .header_links { display: none }
+  .nasa-page .pic {
+    flex-direction: column-reverse;
+  }
 }
 @media (max-width: 876px){
   .top {
@@ -279,4 +332,23 @@ footer {
       padding-top: 20px;
     }
   }
+}
+@media (max-width: 520px){
+  .top_title_text h1 {font-size: 50px !important;}
+  header {
+    height: 80px;
+    .header{
+      height: 78px;
+      padding: 0 10px 0 0;
+  
+    }
+  
+    & .header_logo {
+      height: 80px;
+      width: 300px;
+    }
+  }
+}
+@media (max-width: 450px){
+  .top {transform: scale(0.9);}
 }
